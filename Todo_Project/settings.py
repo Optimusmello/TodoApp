@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'Todo_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ztrpuzjx',
-        'USER' : 'ztrpuzjx',
-        'PASSWORD' : 'UMCwASbOkWxm_5Mk8IJr3TgUf3a89zBE',
+        'NAME': 'zgtsrcep',
+        'USER' : 'zgtsrcep',
+        'PASSWORD' : 'wwbuFlxE_EKF4RhzlTS0FmQ81Ep622iz',
         'HOST' : 'tai.db.elephantsql.com',
         'PORT' : '5432',
     }
