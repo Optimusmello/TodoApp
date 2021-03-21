@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%block title%}Home{%endblock%}
+{%block content%}
+    <div class="container">
+        <a href="{%url 'create'%}"><button type="button" class="btn btn-primary">Add Todo</button></a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Todo List</th>
+                    <th>Created Date</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for item in todo%}
+                <tr>
+                    <td>
+                        {%if item.completed == False%}
+                            <h6>{{item.title}}</h4>
+                            <small>{{item.description}}</small>
+                        {%else%}
+                            <h6 style="text-decoration-line: line-through;">{{item.title}}</h4>
+                            <small style="text-decoration-line: line-through;">{{item.description}}</small>
+                        {%endif%}
+                    </td>
+                    <td>{{item.created_date}}</td>
+                    {%if item.completed == False%}
+                        <td><a href="{%url 'did-it' item.pk%}"><button class="btn btn-primary">Update</button></a></td>
+                        <td><a href="{%url 'delete' item.pk%}"><button class="btn btn-primary">Delete</button></a></td>
+                    {%else%}
+                        <td></td>
+                        <td><a href="{%url 'delete' item.pk%}"><button class="btn btn-primary">Delete</button></a></td>
+                    {%endif%}
+                {%endfor%}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{%endblock%}
